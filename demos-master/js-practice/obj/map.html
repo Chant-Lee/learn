@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>learn</title>
+<script type="text/javascript">
+(function () {
+    LENGTH = 999999;
+
+    var arr = new Array(LENGTH);
+    var map = {};
+
+    var i;
+    for (i = 0; i < LENGTH; i++) {
+        arr[i] = true;
+        map[i] = i;
+    }
+
+    var startDate = new Date();
+    var has = arr.indexOf(LENGTH - 1);
+    console.log(new Date() - startDate);
+
+    startDate = new Date();
+    has = map[LENGTH - 1] === true;
+    console.log(new Date() - startDate);
+})();
+</script>
+</head>
+<body>
+</body>
+</html>

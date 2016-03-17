@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>learn</title>
+<script type="text/javascript">
+(function () {
+    var LENGTH = 99999999;
+    var TEST_TEXT = 'test';
+    var arr = new Array(LENGTH);
+    var i, ii;
+    for (i = 0; i < LENGTH; i++) {
+        arr[i] = TEST_TEXT;
+    }
+
+    var startDate = new Date();
+    for (i = 0; i < arr.length; i++) {
+
+    }
+    console.log(new Date() - startDate);
+document.write(new Date() - startDate );
+    startDate = new Date();
+    //在循环前记录数组长度，可以节省时间
+    for (i = 0, ii = arr.length; i < ii; i++) {
+
+    }
+    console.log(new Date() - startDate);
+    document.write(new Date() - startDate );
+})();
+</script>
+</head>
+<body>
+</body>
+</html>
