@@ -1,0 +1,7 @@
+{% extends 'nun-layout.html' %}
+{% block content %}
+    <h1>n内容页面{{name}}</h1>
+    {% for item in fruits %}
+    <p>{{item}}</p>
+    {% endfor %}
+{% endblock %}
