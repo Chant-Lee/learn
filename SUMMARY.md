@@ -36,7 +36,6 @@
     * [9.2js对象属性](javascript/js/9.2.md)
   * 10.《编写可维护的javascript》读书笔记
     * [9.JS\_Style\_Notes](javascript/9.md)
-  * 11.Deferred与Promise
   * [11.Deferred与Promise](javascript/11.md)
   * 12.神奇的Object.defineProperty
     * [12.1Object.defineProperty语法](javascript/12.1.md)
