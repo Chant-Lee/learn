@@ -1,0 +1,78 @@
+{
+  "operate": 1,
+  "useNewInvoice": true,
+  "addressId": 459482293,
+  "paymentType": 4,
+  "invoiceParam": {
+    "phone": null,
+    "email": null,
+    "invoiceCompany": null,
+    "invoiceTypeId": 1,
+    "invoiceTitleId": 4,
+    "invoiceContentId": 1
+  },
+  "shipmentInfos": [{
+    "venderId": 1000094508,
+    "shipment": {
+      "type": 65,
+      "name": "TOPLIFE配送",
+      "desc": "TOPLIFE配送默认时间",
+      "price": "0.00",
+      "canSelectTime": false,
+      "shipmentTimeType": 3,
+      "tip": null,
+      "promiseType": 1,
+      "promiseDate": null,
+      "promiseTimeRange": null,
+      "week": null,
+      "batchId": null,
+      "freight": 0,
+      "sendpay": null,
+      "stationId": null,
+      "cutOrder": null
+    }
+  }, {
+    "venderId": 1000092346,
+    "shipment": {
+      "type": 65,
+      "name": "TOPLIFE配送",
+      "desc": "TOPLIFE配送默认时间",
+      "price": "0.00",
+      "canSelectTime": false,
+      "shipmentTimeType": 3,
+      "tip": null,
+      "promiseType": 1,
+      "promiseDate": null,
+      "promiseTimeRange": null,
+      "week": null,
+      "batchId": null,
+      "freight": 0,
+      "sendpay": null,
+      "stationId": null,
+      "cutOrder": null
+    }
+  }, {
+    "venderId": 712307,
+    "shipment": {
+      "type": 67,
+      "name": "京东配送",
+      "desc": "工作日、双休日与假日均可送货",
+      "price": "0.00",
+      "canSelectTime": false,
+      "shipmentTimeType": 3,
+      "tip": "商品由品牌直供，京东配送",
+      "promiseType": 0,
+      "promiseDate": null,
+      "promiseTimeRange": null,
+      "week": null,
+      "batchId": null,
+      "freight": 0,
+      "sendpay": null,
+      "stationId": null,
+      "cutOrder": null
+    }
+  }],
+  "selectedCoupons": {
+    "16158156727": 650
+  }
+}
