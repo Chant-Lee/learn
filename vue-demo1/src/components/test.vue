@@ -1,6 +1,7 @@
 <template>
   <div class="test">
-     hello {{ name }}
+    <h2>子组件：</h2>
+     hello {{ name }}  {{count}}
   </div>
 </template>
 
@@ -9,6 +10,14 @@ export default {
   name: 'Test',
   props: {
     name: [String, Object]
+  },
+  computed: {
+    count () {
+      return this.$store.state.count
+    }
+  },
+  methods: {
+
   }
 }
 </script>

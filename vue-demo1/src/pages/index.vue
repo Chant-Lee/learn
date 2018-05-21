@@ -1,12 +1,19 @@
 <template>
   <div class="index">
-    index {{ msg }}-{{count}}
-    <test :name="name"/>
+    index {{ msg }} {{count}}
+    <button @click="add">增加</button>
+    <button @click="less">--</button>
+    <button @click="asyncAdd">异步增加</button>
+    <button @click="asyncLess">异步--</button>
+    <Test :name="name"/>
   </div>
 </template>
 
 <script>
-import test from '../components/test.vue'
+import { mapMutations, mapActions } from 'vuex'
+
+import Test from '../components/test.vue'
+
 export default {
   name: 'Index',
   data () {
@@ -23,10 +30,25 @@ export default {
       return this.$store.state.count
     }
   },
+  methods: {
+    add () {
+      this.$store.commit('increment')
+    },
+    ...mapMutations({
+      // 将 `this.delete()` 映射为 `this.$store.commit('decrement')`
+      less: 'lessCount'
+    }),
+    asyncLess () {
+      this.$store.dispatch('asyncLessCount')
+    },
+    ...mapActions({
+      asyncAdd: 'asyncIncrement'
+    })
+  },
   mounted () {
   },
   components: {
-    test
+    Test
   }
 }
 </script>
