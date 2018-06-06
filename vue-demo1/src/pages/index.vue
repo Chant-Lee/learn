@@ -22,9 +22,6 @@ export default {
       name: 'xiaoming'
     }
   },
-  created () {
-
-  },
   computed: {
     count () {
       return this.$store.state.count
@@ -35,7 +32,7 @@ export default {
       this.$store.commit('increment')
     },
     ...mapMutations({
-      // 将 `this.delete()` 映射为 `this.$store.commit('decrement')`
+      // 将 `this.less()` 映射为 `this.$store.commit('lessCount')`
       less: 'lessCount'
     }),
     asyncLess () {
@@ -44,8 +41,6 @@ export default {
     ...mapActions({
       asyncAdd: 'asyncIncrement'
     })
-  },
-  mounted () {
   },
   components: {
     Test

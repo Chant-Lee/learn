@@ -15,9 +15,6 @@ export default {
     count () {
       return this.$store.state.count
     }
-  },
-  methods: {
-
   }
 }
 </script>
