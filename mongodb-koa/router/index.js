@@ -9,7 +9,7 @@ const {
 const { hasBodyInfo, hasToken } = require('../app/filter')
 
 module.exports = function () {
-	let router = new Router({
+  let router = new Router({
     prefix: '/api'
   })
 

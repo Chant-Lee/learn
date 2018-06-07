@@ -1,4 +1,4 @@
-const mongoose =  require('mongoose')
+const mongoose = require('mongoose')
 const User = mongoose.model('User')
 
 /**
@@ -6,11 +6,11 @@ const User = mongoose.model('User')
  * @param  {[type]} options.phoneNumber [description]
  * @return {[type]}                     [description]
  */
-const selectUserByPhone = async ({phoneNumber}) => {
-	let query = User.find({phoneNumber})
+const selectUserByPhone = async ({ phoneNumber }) => {
+	let query = User.find({ phoneNumber })
 	let res = {}
-	await query.exec(function(err, user) {
-			res = user || {}
+	await query.exec(function (err, user) {
+		res = user || {}
 	})
 	return res
 }
@@ -22,8 +22,8 @@ const selectUserByPhone = async ({phoneNumber}) => {
 const selectAllUsers = async () => {
 	let query = User.find({})
 	let res = []
-	await query.exec(function(err, users) {
-    res = err ? [] : users
+	await query.exec(function (err, users) {
+		res = err ? [] : users
 	})
 	return res
 }
@@ -43,17 +43,17 @@ const addUser = async (user) => {
  * @param  {[type]} options.phoneNumber [description]
  * @return {[type]}                     [description]
  */
-const deleteUser = async ({phoneNumber}) => {
+const deleteUser = async ({ phoneNumber }) => {
 	let flag = false
-	await User.remove({phoneNumber}, function(err) {
-    flag = err ? false : true	
+	await User.remove({ phoneNumber }, function (err) {
+		flag = err ? false : true
 	})
 	return flag
 }
 
 module.exports = {
-  selectUserByPhone,
-  selectAllUsers,
-  addUser,
-  deleteUser
+	selectUserByPhone,
+	selectAllUsers,
+	addUser,
+	deleteUser
 }

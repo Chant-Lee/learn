@@ -1,5 +1,5 @@
 const xss = require('xss')
-const mongoose =  require('mongoose')
+const mongoose = require('mongoose')
 const User = mongoose.model('User')
 const uuid = require('uuid')
 
@@ -16,26 +16,26 @@ const {
  * @yield {[type]}   [description]
  */
 const signup = async (ctx, next) => {
-	let phoneNumber = xss(ctx.request.body.phoneNumber.trim())
-	let user = await User.findOne({
-	  phoneNumber,
-	}).exec()
-	let verifyCode = Math.floor(Math.random()*10000+1)
-	if (!user) {
-	  var accessToken = uuid.v4()
-	  user = new User({
-	    nickname: '测试用户',
-	    avatar: 'http://upload-images.jianshu.io/upload_images/5307186-eda1b28e54a4d48e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240',
-	    phoneNumber: xss(phoneNumber),
-	    verifyCode: verifyCode,
-	    accessToken: accessToken
-	  })
-	}
-	else {
-	  user.verifyCode = verifyCode
-	}
+  let phoneNumber = xss(ctx.request.body.phoneNumber.trim())
+  let user = await User.findOne({
+    phoneNumber,
+  }).exec()
+  let verifyCode = Math.floor(Math.random() * 10000 + 1)
+  if (!user) {
+    var accessToken = uuid.v4()
+    user = new User({
+      nickname: '测试用户',
+      avatar: 'http://upload-images.jianshu.io/upload_images/5307186-eda1b28e54a4d48e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240',
+      phoneNumber: xss(phoneNumber),
+      verifyCode: verifyCode,
+      accessToken: accessToken
+    })
+  }
+  else {
+    user.verifyCode = verifyCode
+  }
 
-	try {
+  try {
     user = await user.save()
     ctx.body = {
       success: true
@@ -61,7 +61,7 @@ const updateUser = async (ctx, next) => {
   let user = ctx.session.user
   let fields = 'avatar,gender,age,nickname,breed'.split(',')
 
-  fields.forEach(function(field) {
+  fields.forEach(function (field) {
     if (body[field]) {
       user[field] = xss(body[field].trim())
     }
@@ -99,16 +99,16 @@ const getAllUsers = async (ctx, next) => {
  */
 const addUserInfo = async (ctx, next) => {
   let user = new User({
-      nickname: 'zhangsan',
-      avatar: 'http://www.baidu.com',
-      phoneNumber: xss('15223011111'),
-      accessToken: uuid.v4()
-    })
-  let userInfo =  await addUser(user)
-  if(userInfo){
+    nickname: 'zhangsan',
+    avatar: 'http://www.baidu.com',
+    phoneNumber: xss('15223011111'),
+    accessToken: uuid.v4()
+  })
+  let userInfo = await addUser(user)
+  if (userInfo) {
     ctx.body = {
       success: true,
-      data : userInfo
+      data: userInfo
     }
   }
 }
@@ -121,7 +121,7 @@ const addUserInfo = async (ctx, next) => {
  */
 const deleteUserInfo = async (ctx, next) => {
   const phoneNumber = xss(ctx.request.body.phoneNumber.trim())
-  var data  = await deleteUser({phoneNumber})
+  var data = await deleteUser({ phoneNumber })
   ctx.body = {
     success: true,
     data

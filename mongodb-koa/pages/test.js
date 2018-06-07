@@ -17,7 +17,7 @@ class Test extends Component {
   }
   render () {
     <div class='test_koa'>
-
+      11111111
     </div>
   }
 }

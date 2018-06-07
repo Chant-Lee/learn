@@ -13,7 +13,7 @@ const Schema = mongoose.Schema
  * @type {mongoose}
  */
 const UserSchema = new Schema({
-	phoneNumber: {
+  phoneNumber: {
     unique: true,
     type: String
   },
@@ -38,7 +38,7 @@ const UserSchema = new Schema({
 })
 
 // Defines a pre hook for the document.
-UserSchema.pre('save', function(next) {
+UserSchema.pre('save', function (next) {
   if (this.isNew) {
     this.meta.createAt = this.meta.updateAt = Date.now()
   }
